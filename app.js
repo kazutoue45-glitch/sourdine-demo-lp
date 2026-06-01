@@ -4,6 +4,42 @@
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var rand = function (a, b) { return a + Math.random() * (b - a); };
 
+  /* ---------- 0. バランス型マソンリー（一番低い列に積んで下端を揃える） ---------- */
+  function buildMasonry(force) {
+    var spread = document.querySelector(".spread");
+    if (!spread) return;
+    if (!spread.__items) {
+      spread.__items = Array.prototype.slice.call(spread.children)
+        .filter(function (c) { return c.classList && c.classList.contains("sp"); });
+    }
+    var items = spread.__items;
+    var cols = window.innerWidth >= 768 ? 3 : 2;
+    if (!force && spread.__cols === cols && spread.classList.contains("spread--js")) return;
+    spread.__cols = cols;
+    spread.classList.add("spread--js");
+    while (spread.firstChild) spread.removeChild(spread.firstChild);
+    var colEls = [], heights = [], i;
+    for (i = 0; i < cols; i++) {
+      var c = document.createElement("div");
+      c.className = "spread__col";
+      spread.appendChild(c);
+      colEls.push(c); heights.push(0);
+    }
+    items.forEach(function (item) {
+      var m = 0;
+      for (var k = 1; k < cols; k++) { if (heights[k] < heights[m]) m = k; }
+      colEls[m].appendChild(item);
+      heights[m] += item.offsetHeight + 24;
+    });
+  }
+  buildMasonry();
+  window.addEventListener("load", function () { buildMasonry(true); });
+  var rzT;
+  window.addEventListener("resize", function () {
+    clearTimeout(rzT);
+    rzT = setTimeout(function () { buildMasonry(true); }, 220);
+  }, { passive: true });
+
   /* ---------- 1. スクロール出現（IntersectionObserver） ---------- */
   /* JS有効時だけ隠す。JS不達やreduce時はコンテンツを常時表示（消えない） */
   if (!reduce) {
