@@ -523,28 +523,24 @@ a { color: inherit; text-decoration: none; }
 /* LOOKBOOK：散らし配置スプレッド */
 .lookbook { padding: 72px var(--gutter); }
 .lookbook .section-label { margin-bottom: 24px; }
-.spread { display: block; }
-.sp { display: block; margin: 0 0 56px; }
+/* 密な雑誌マソンリー：ルックと情景写真を混在させて詰める */
+.spread { column-count: 2; column-gap: 12px; }
+.sp { display: block; width: 100%; margin: 0 0 12px; break-inside: avoid; }
 .sp__media {
   position: relative; display: block; overflow: hidden;
   aspect-ratio: 4 / 5;
-  transform: rotate(var(--rot, 0deg)) translateY(var(--ny, 0px)) scale(1.02);
 }
-.sp__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.sp__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.sp--look .sp__media:hover img { transform: scale(1.03); }
 .sp__media[data-slideshow] img { opacity: 0; transition: opacity 1.1s var(--ease); }
 .sp__media[data-slideshow] img.is-on { opacity: 1; }
+.sp__media[data-slideshow] img:not(.is-on) { transform: none; }
 .sp__media:not([data-slideshow]) img { opacity: 1; }
-/* 画像サイズに変化を付ける */
-.sp--b .sp__media, .sp--e .sp__media { aspect-ratio: 3 / 4; }
-.sp--c .sp__media, .sp--f .sp__media { aspect-ratio: 1 / 1; }
-/* モバイル：左右にずらして散らす */
-/* モバイル：サイズ・位置を大きく振って意図的に散らす */
-.sp--a { width: 97%; margin: 0 auto 18px 0; }
-.sp--b { width: 48%; margin: -16px 0 70px auto; }
-.sp--c { width: 70%; margin: 0 8% 24px auto; }
-.sp--d { width: 43%; margin: 0 auto 80px 6%; }
-.sp--e { width: 88%; margin: 0 0 20px auto; }
-.sp--f { width: 54%; margin: -10px auto 56px 2%; }
+/* アスペクト比で大きさに変化を付ける */
+.is-tall .sp__media { aspect-ratio: 3 / 4; }
+.is-square .sp__media { aspect-ratio: 1 / 1; }
+.is-wide .sp__media { aspect-ratio: 3 / 2; }
+.sp__cap { font-family: var(--latin); font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sub-strong); margin-top: 8px; }
 
 .sp__info { margin-top: 16px; }
 .sp__no { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0.1em; color: var(--sub-strong); margin-bottom: 6px; }
@@ -571,15 +567,13 @@ a { color: inherit; text-decoration: none; }
   .campaign__ja { font-size: 30px; }
 
   .lookbook { padding: 120px var(--gutter); max-width: var(--maxw); margin: 0 auto; }
-  .lookbook .section-label { margin-bottom: 8px; }
-  /* デスクトップ：12カラムグリッドにサイズ・位置を大きく変えて配置（雑誌スプレッド） */
-  .spread { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 40px; align-items: start; }
-  .sp { width: 100%; margin: 0; }
-  .sp--a { grid-column: 1 / 7;  margin-top: 0; }       /* 大・左 */
-  .sp--b { grid-column: 9 / 13; margin-top: 130px; }   /* 小・右・下げる */
-  .sp--c { grid-column: 2 / 8;  margin-top: 70px; }    /* 中・左 */
-  .sp--d { grid-column: 9 / 12; margin-top: -40px; }   /* 小・右・上げて重ねる */
-  .sp--e { grid-column: 5 / 13; margin-top: 30px; }    /* 大・右 */
-  .sp--f { grid-column: 1 / 5;  margin-top: -10px; }   /* 小・左 */
+  .lookbook .section-label { margin-bottom: 20px; }
+  /* デスクトップ：3カラムの密なマソンリー（情景写真を混ぜて詰める） */
+  .spread { column-count: 3; column-gap: 22px; }
+  .sp { margin: 0 0 22px; }
+}
+@media (min-width: 1280px) {
+  .spread { column-gap: 28px; }
+  .sp { margin: 0 0 28px; }
 }
 
