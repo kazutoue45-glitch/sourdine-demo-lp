@@ -105,13 +105,17 @@ a { color: inherit; text-decoration: none; }
   background: var(--paper);
   overflow: hidden;
 }
-.fv__photo {
-  position: absolute;
-  inset: 0;
+.fv__stage { position: absolute; inset: 0; }
+.fv__stage img {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 62% center;
+  object-position: 64% center;
+  opacity: 0;
+  transition: opacity 1.4s var(--ease);
 }
+.fv__stage img.is-on { opacity: 1; }
+.fv__stage--wide { display: none; }
 .fv::before {
   content: "";
   position: absolute;
@@ -119,30 +123,33 @@ a { color: inherit; text-decoration: none; }
   z-index: 1;
   background: linear-gradient(97deg,
     var(--paper) 0%,
-    rgba(244, 243, 241, 0.97) 28%,
-    rgba(244, 243, 241, 0.74) 45%,
-    rgba(244, 243, 241, 0) 66%);
+    rgba(244, 243, 241, 0.96) 30%,
+    rgba(244, 243, 241, 0.68) 48%,
+    rgba(244, 243, 241, 0) 70%);
 }
 .fv__copy {
   position: absolute;
   left: var(--gutter);
-  top: 16vh;
+  top: 12vh;
   z-index: 2;
-  max-width: 90vw;
+  max-width: 94vw;
 }
 .fv__season {
+  display: flex;
+  flex-direction: column;
   font-family: var(--latin);
-  font-size: 10px;
-  letter-spacing: 0.28em;
+  font-size: 11px;
+  letter-spacing: 0.34em;
+  line-height: 1.7;
   color: var(--sub-strong);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .fv__wordmark {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(34px, 11vw, 92px);
-  line-height: 0.92;
-  letter-spacing: 0.02em;
+  font-size: clamp(56px, 21vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.005em;
   white-space: nowrap;
 }
 .fv__tagline-vertical {
@@ -414,12 +421,15 @@ a { color: inherit; text-decoration: none; }
   .site-head__nav { display: flex; gap: 32px; }
 
   .fv { min-height: calc(100svh - 104px); }
-  .fv__photo { object-position: center; }
+  .fv__stage--wide { display: block; }
+  .fv__stage--port { display: none; }
+  .fv__stage img { object-position: center; }
   .fv::before {
-    background: linear-gradient(97deg, var(--paper) 0%, rgba(244,243,241,0.92) 26%, rgba(244,243,241,0.45) 44%, rgba(244,243,241,0) 58%);
+    background: linear-gradient(97deg, var(--paper) 0%, rgba(244,243,241,0.9) 26%, rgba(244,243,241,0.4) 44%, rgba(244,243,241,0) 58%);
   }
-  .fv__copy { top: 24vh; max-width: 52vw; }
-  .fv__wordmark { font-size: clamp(64px, 8.4vw, 120px); }
+  .fv__copy { top: 22vh; max-width: 60vw; }
+  .fv__season { flex-direction: row; gap: 18px; font-size: 12px; }
+  .fv__wordmark { font-size: clamp(96px, 14vw, 210px); }
   .fv__tagline-vertical { font-size: 21px; }
 
   .band { grid-template-columns: repeat(3, 1fr); }
@@ -528,12 +538,13 @@ a { color: inherit; text-decoration: none; }
 .sp--b .sp__media, .sp--e .sp__media { aspect-ratio: 3 / 4; }
 .sp--c .sp__media, .sp--f .sp__media { aspect-ratio: 1 / 1; }
 /* モバイル：左右にずらして散らす */
-.sp--a { width: 88%; margin-right: auto; }
-.sp--b { width: 66%; margin-left: auto; }
-.sp--c { width: 80%; margin-right: auto; }
-.sp--d { width: 60%; margin-left: auto; }
-.sp--e { width: 84%; margin-right: auto; }
-.sp--f { width: 64%; margin-left: auto; }
+/* モバイル：サイズ・位置を大きく振って意図的に散らす */
+.sp--a { width: 97%; margin: 0 auto 18px 0; }
+.sp--b { width: 48%; margin: -16px 0 70px auto; }
+.sp--c { width: 70%; margin: 0 8% 24px auto; }
+.sp--d { width: 43%; margin: 0 auto 80px 6%; }
+.sp--e { width: 88%; margin: 0 0 20px auto; }
+.sp--f { width: 54%; margin: -10px auto 56px 2%; }
 
 .sp__info { margin-top: 16px; }
 .sp__no { font-family: var(--serif); font-style: italic; font-size: 16px; letter-spacing: 0.1em; color: var(--sub-strong); margin-bottom: 6px; }
@@ -561,13 +572,14 @@ a { color: inherit; text-decoration: none; }
 
   .lookbook { padding: 120px var(--gutter); max-width: var(--maxw); margin: 0 auto; }
   .lookbook .section-label { margin-bottom: 8px; }
-  /* デスクトップ：2カラムのマソンリーで散らす */
-  .spread { column-count: 2; column-gap: 72px; }
-  .sp { width: 100%; break-inside: avoid; margin: 0 0 78px; }
-  /* カラム内で更に左右に寄せて単調さを消す */
-  .sp--b, .sp--d, .sp--f { width: 84%; margin-left: auto; }
-  .sp--a, .sp--c, .sp--e { width: 92%; margin-right: auto; }
-  .sp--c { margin-top: 36px; }
-  .sp--e { margin-top: 24px; }
+  /* デスクトップ：12カラムグリッドにサイズ・位置を大きく変えて配置（雑誌スプレッド） */
+  .spread { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 40px; align-items: start; }
+  .sp { width: 100%; margin: 0; }
+  .sp--a { grid-column: 1 / 7;  margin-top: 0; }       /* 大・左 */
+  .sp--b { grid-column: 9 / 13; margin-top: 130px; }   /* 小・右・下げる */
+  .sp--c { grid-column: 2 / 8;  margin-top: 70px; }    /* 中・左 */
+  .sp--d { grid-column: 9 / 12; margin-top: -40px; }   /* 小・右・上げて重ねる */
+  .sp--e { grid-column: 5 / 13; margin-top: 30px; }    /* 大・右 */
+  .sp--f { grid-column: 1 / 5;  margin-top: -10px; }   /* 小・左 */
 }
 
