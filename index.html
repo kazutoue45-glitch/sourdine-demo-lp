@@ -8,6 +8,7 @@
 <meta property="og:title" content="SOURDINE — 声を、ひそめる。" />
 <meta property="og:description" content="叫ばない服が、いちばん遠くまで届く。色を引き、輪郭と素材の温度だけで語る。" />
 <meta property="og:type" content="website" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&family=Shippori+Mincho+B1:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,15 +16,13 @@
 </head>
 <body>
 
-<!-- 告知バー -->
 <div class="topbar">¥11,000以上の購入で送料無料　—　2026 AUTUMN COLLECTION 受注開始</div>
 
-<!-- HEADER -->
 <header class="site-head">
   <a class="site-head__mark" href="#top">SOURDINE</a>
   <nav class="site-head__nav">
     <a href="#collection">COLLECTION</a>
-    <a href="#styling">STYLING</a>
+    <a href="#lookbook">LOOKBOOK</a>
     <a href="#about">ABOUT</a>
     <a href="#shop">SHOP</a>
   </nav>
@@ -49,14 +48,14 @@
 
   <!-- 2. 特徴バンド -->
   <section class="band">
-    <div class="band__item"><span class="band__en">MADE TO LAST</span><span class="band__ja">一着を、長く着る設計</span></div>
-    <div class="band__item"><span class="band__en">GENDER-FREE</span><span class="band__ja">性別の枠を持たない</span></div>
-    <div class="band__item"><span class="band__en">MONOCHROME</span><span class="band__ja">色を引いて、輪郭で語る</span></div>
+    <div class="band__item" data-reveal><span class="band__en">MADE TO LAST</span><span class="band__ja">一着を、長く着る設計</span></div>
+    <div class="band__item" data-reveal><span class="band__en">GENDER-FREE</span><span class="band__ja">性別の枠を持たない</span></div>
+    <div class="band__item" data-reveal><span class="band__en">MONOCHROME</span><span class="band__ja">色を引いて、輪郭で語る</span></div>
   </section>
 
   <!-- 3. CONCEPT -->
   <section class="concept" id="about">
-    <div class="concept__lead">
+    <div class="concept__lead" data-reveal>
       <p class="concept__vhead" lang="ja">沈黙<span>SILENCE</span></p>
       <div class="concept__text">
         <p>叫ばない服が、いちばん遠くまで届く。</p>
@@ -64,83 +63,84 @@
         <p>流行でも、性別でもなく、<br />佇まいで選ぶ服を。</p>
       </div>
     </div>
-    <figure class="concept__figure">
+    <figure class="concept__figure" data-reveal>
       <img src="assets/sections/concept-drape.jpg" alt="黒い生地のドレープ。斜めに落ちる影。" />
     </figure>
   </section>
 
-  <!-- 4. NEW COLLECTION グリッド -->
+  <!-- 4. NEW COLLECTION（ホバーで画像切替） -->
   <section class="collection" id="collection">
-    <div class="section-label section-label--center">
+    <div class="section-label section-label--center" data-reveal>
       <span class="section-label__no">01</span>
       <span class="section-label__en">NEW COLLECTION</span>
       <span class="section-label__ja">2026 AUTUMN / WINTER ── 全14型</span>
     </div>
     <div class="grid">
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-overcoat.jpg" alt="ダブルフェイスコート" /></a>
-        <p class="card__en">DOUBLE-FACE COAT</p>
-        <p class="card__ja">ダブルフェイスコート</p>
-        <p class="card__price">¥62,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-overcoat.jpg" alt="ダブルフェイスコート" /><img class="alt" src="assets/sections/coat-charcoal.jpg" alt="" /></a>
+        <p class="card__en">DOUBLE-FACE COAT</p><p class="card__ja">ダブルフェイスコート</p><p class="card__price">¥62,000</p>
       </article>
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-blouson.jpg" alt="ナイロンブルゾン" /></a>
-        <p class="card__en">NYLON BLOUSON</p>
-        <p class="card__ja">ナイロンブルゾン</p>
-        <p class="card__price">¥24,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-blouson.jpg" alt="ナイロンブルゾン" /><img class="alt" src="assets/sections/style-look02.jpg" alt="" /></a>
+        <p class="card__en">NYLON BLOUSON</p><p class="card__ja">ナイロンブルゾン</p><p class="card__price">¥24,000</p>
       </article>
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-cardigan.jpg" alt="チャンキーカーディガン" /></a>
-        <p class="card__en">CHUNKY CARDIGAN</p>
-        <p class="card__ja">チャンキーカーディガン</p>
-        <p class="card__price">¥22,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-cardigan.jpg" alt="チャンキーカーディガン" /><img class="alt" src="assets/sections/prod-tee.jpg" alt="" /></a>
+        <p class="card__en">CHUNKY CARDIGAN</p><p class="card__ja">チャンキーカーディガン</p><p class="card__price">¥22,000</p>
       </article>
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-shirt.jpg" alt="オーバーサイズシャツ" /></a>
-        <p class="card__en">OVERSIZED SHIRT</p>
-        <p class="card__ja">オーバーサイズシャツ</p>
-        <p class="card__price">¥16,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-shirt.jpg" alt="オーバーサイズシャツ" /><img class="alt" src="assets/sections/style-look01.jpg" alt="" /></a>
+        <p class="card__en">OVERSIZED SHIRT</p><p class="card__ja">オーバーサイズシャツ</p><p class="card__price">¥16,000</p>
       </article>
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-trousers.jpg" alt="ワイドトラウザー" /></a>
-        <p class="card__en">WIDE TROUSERS</p>
-        <p class="card__ja">ワイドトラウザー</p>
-        <p class="card__price">¥18,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-trousers.jpg" alt="ワイドトラウザー" /><img class="alt" src="assets/sections/look05.jpg" alt="" /></a>
+        <p class="card__en">WIDE TROUSERS</p><p class="card__ja">ワイドトラウザー</p><p class="card__price">¥18,000</p>
       </article>
-      <article class="card">
-        <a class="card__media" href="#"><img src="assets/sections/prod-tee.jpg" alt="ヘビーウェイトTシャツ" /></a>
-        <p class="card__en">HEAVY TEE</p>
-        <p class="card__ja">ヘビーウェイトTシャツ</p>
-        <p class="card__price">¥7,000</p>
+      <article class="card" data-reveal>
+        <a class="card__media" href="#"><img src="assets/sections/prod-tee.jpg" alt="ヘビーウェイトTシャツ" /><img class="alt" src="assets/sections/look04.jpg" alt="" /></a>
+        <p class="card__en">HEAVY TEE</p><p class="card__ja">ヘビーウェイトTシャツ</p><p class="card__price">¥7,000</p>
       </article>
     </div>
-    <a class="textlink textlink--center" href="#">VIEW ALL 14 ITEMS</a>
+    <a class="textlink textlink--center" href="#" data-reveal>VIEW ALL 14 ITEMS</a>
   </section>
 
-  <!-- 5. COLOR バリエーション -->
+  <!-- 5. CAMPAIGN（フルブリード・クロスフェード） -->
+  <section class="campaign" data-parallax>
+    <div class="campaign__slides" data-slideshow>
+      <img class="is-on" src="assets/sections/style-look02.jpg" alt="" />
+      <img src="assets/sections/look06.jpg" alt="" />
+      <img src="assets/sections/style-look03.jpg" alt="" />
+      <img src="assets/sections/look04.jpg" alt="" />
+    </div>
+    <div class="campaign__copy">
+      <p class="campaign__en">2026 AUTUMN / WINTER</p>
+      <p class="campaign__ja" lang="ja">夜へ、ひとつ低い声で。</p>
+    </div>
+  </section>
+
+  <!-- 6. COLOR -->
   <section class="color">
-    <div class="section-label">
+    <div class="section-label" data-reveal>
       <span class="section-label__no">02</span>
       <span class="section-label__en">THE COAT — 3 TONES</span>
       <span class="section-label__ja">同じ輪郭を、三つのトーンで。</span>
     </div>
     <div class="color__row">
-      <figure class="color__item"><img src="assets/sections/coat-black.jpg" alt="ブラック" /><figcaption>BLACK</figcaption></figure>
-      <figure class="color__item"><img src="assets/sections/coat-charcoal.jpg" alt="チャコール" /><figcaption>CHARCOAL</figcaption></figure>
-      <figure class="color__item"><img src="assets/sections/coat-greige.jpg" alt="グレージュ" /><figcaption>GREIGE</figcaption></figure>
+      <figure class="color__item" data-reveal><img src="assets/sections/coat-black.jpg" alt="ブラック" /><figcaption>BLACK</figcaption></figure>
+      <figure class="color__item" data-reveal><img src="assets/sections/coat-charcoal.jpg" alt="チャコール" /><figcaption>CHARCOAL</figcaption></figure>
+      <figure class="color__item" data-reveal><img src="assets/sections/coat-greige.jpg" alt="グレージュ" /><figcaption>GREIGE</figcaption></figure>
     </div>
   </section>
 
-  <!-- 6. THE PIECES（エディトリアル） -->
+  <!-- 7. THE PIECES -->
   <section class="pieces" id="pieces">
-    <div class="section-label">
+    <div class="section-label" data-reveal>
       <span class="section-label__no">03</span>
       <span class="section-label__en">THE PIECES</span>
       <span class="section-label__ja">主役の三着。</span>
     </div>
-
-    <article class="piece">
-      <figure class="piece__figure"><img src="assets/sections/piece-coat.jpg" alt="ウールメルトンのロングコートを着たモデル" /></figure>
+    <article class="piece" data-reveal>
+      <figure class="piece__figure"><img src="assets/sections/piece-coat.jpg" alt="ウールメルトンのロングコート" /></figure>
       <div class="piece__body">
         <p class="piece__no">THE COAT ／ 01</p>
         <h3 class="piece__name">肩で語る、ウールメルトンのロングコート。</h3>
@@ -149,9 +149,8 @@
         <a class="textlink" href="#">商品詳細へ</a>
       </div>
     </article>
-
-    <article class="piece piece--reverse">
-      <figure class="piece__figure"><img src="assets/sections/piece-setup.jpg" alt="マットギャバジンのセットアップを着たモデル" /></figure>
+    <article class="piece piece--reverse" data-reveal>
+      <figure class="piece__figure"><img src="assets/sections/piece-setup.jpg" alt="マットギャバジンのセットアップ" /></figure>
       <div class="piece__body">
         <p class="piece__no">THE SET UP ／ 02</p>
         <h3 class="piece__name">夜に溶ける、マットギャバジンのセットアップ。</h3>
@@ -160,9 +159,8 @@
         <a class="textlink" href="#">商品詳細へ</a>
       </div>
     </article>
-
-    <article class="piece">
-      <figure class="piece__figure"><img src="assets/sections/piece-knit.jpg" alt="ハイゲージメリノのニットを着たモデル" /></figure>
+    <article class="piece" data-reveal>
+      <figure class="piece__figure"><img src="assets/sections/piece-knit.jpg" alt="ハイゲージメリノのニット" /></figure>
       <div class="piece__body">
         <p class="piece__no">THE KNIT ／ 03</p>
         <h3 class="piece__name">素肌の温度を変える、ハイゲージメリノ。</h3>
@@ -173,87 +171,161 @@
     </article>
   </section>
 
-  <!-- 7. STYLING / LOOKBOOK -->
-  <section class="styling" id="styling">
-    <div class="section-label section-label--center">
+  <!-- 8. LOOKBOOK（散らし配置スプレッド） -->
+  <section class="lookbook" id="lookbook">
+    <div class="section-label" data-reveal>
       <span class="section-label__no">04</span>
       <span class="section-label__en">STYLING — LOOKBOOK</span>
-      <span class="section-label__ja">白を一枚、黒を一枚。</span>
+      <span class="section-label__ja">一式で、声をひそめる。</span>
     </div>
-    <div class="looks">
-      <figure class="lk"><img src="assets/sections/style-look01.jpg" alt="ルック01" /><figcaption><span>LOOK 01</span>白を一枚、黒を一枚。それだけで足りる午後。</figcaption></figure>
-      <figure class="lk"><img src="assets/sections/style-look02.jpg" alt="ルック02" /><figcaption><span>LOOK 02</span>金曜の終電前。静かでいるための一着。</figcaption></figure>
-      <figure class="lk"><img src="assets/sections/style-look03.jpg" alt="ルック03" /><figcaption><span>LOOK 03</span>約束のない休日。輪郭だけを連れて歩く。</figcaption></figure>
-      <figure class="lk"><img src="assets/sections/look04.jpg" alt="ルック04" /><figcaption><span>LOOK 04</span>スタジオで、無音の佇まい。</figcaption></figure>
-      <figure class="lk"><img src="assets/sections/look05.jpg" alt="ルック05" /><figcaption><span>LOOK 05</span>昼の光に、グレージュを一枚。</figcaption></figure>
-      <figure class="lk"><img src="assets/sections/look06.jpg" alt="ルック06" /><figcaption><span>LOOK 06</span>夜へ向かう、グレーと黒の重ね。</figcaption></figure>
+    <div class="spread">
+
+      <figure class="sp sp--a" data-reveal>
+        <a class="sp__media" data-scatter data-slideshow href="#">
+          <img class="is-on" src="assets/sections/style-look01.jpg" alt="ルック01" />
+          <img src="assets/sections/prod-shirt.jpg" alt="" />
+        </a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 01</p>
+          <ul class="tags">
+            <li><a href="#">OVERSIZED SHIRT<span>¥16,000</span></a></li>
+            <li><a href="#">WIDE TROUSERS<span>¥18,000</span></a></li>
+            <li><a href="#">LEATHER SHOES<span>¥24,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
+      <figure class="sp sp--b" data-reveal>
+        <a class="sp__media" data-scatter href="#"><img class="is-on" src="assets/sections/style-look02.jpg" alt="ルック02" /></a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 02</p>
+          <ul class="tags">
+            <li><a href="#">DOUBLE-FACE COAT<span>¥58,000</span></a></li>
+            <li><a href="#">HIGH-GAUGE KNIT<span>¥19,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
+      <figure class="sp sp--c" data-reveal>
+        <a class="sp__media" data-scatter data-slideshow href="#">
+          <img class="is-on" src="assets/sections/look05.jpg" alt="ルック05" />
+          <img src="assets/sections/coat-greige.jpg" alt="" />
+        </a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 03</p>
+          <ul class="tags">
+            <li><a href="#">OVERSIZED SHIRT<span>¥16,000</span></a></li>
+            <li><a href="#">WIDE TROUSERS / GREIGE<span>¥18,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
+      <figure class="sp sp--d" data-reveal>
+        <a class="sp__media" data-scatter href="#"><img class="is-on" src="assets/sections/style-look03.jpg" alt="ルック03" /></a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 04</p>
+          <ul class="tags">
+            <li><a href="#">BLACK OVERSHIRT<span>¥21,000</span></a></li>
+            <li><a href="#">HEAVY TEE<span>¥7,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
+      <figure class="sp sp--e" data-reveal>
+        <a class="sp__media" data-scatter href="#"><img class="is-on" src="assets/sections/look06.jpg" alt="ルック06" /></a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 05</p>
+          <ul class="tags">
+            <li><a href="#">DOUBLE-FACE COAT<span>¥58,000</span></a></li>
+            <li><a href="#">CHUNKY CARDIGAN<span>¥22,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
+      <figure class="sp sp--f" data-reveal>
+        <a class="sp__media" data-scatter data-slideshow href="#">
+          <img class="is-on" src="assets/sections/look04.jpg" alt="ルック04" />
+          <img src="assets/sections/prod-overcoat.jpg" alt="" />
+        </a>
+        <figcaption class="sp__info">
+          <p class="sp__no">LOOK 06</p>
+          <ul class="tags">
+            <li><a href="#">MATTE SET UP<span>¥42,000</span></a></li>
+            <li><a href="#">HEAVY TEE<span>¥7,000</span></a></li>
+          </ul>
+          <a class="tags__buy" href="#">この一式を見る — BUY</a>
+        </figcaption>
+      </figure>
+
     </div>
   </section>
 
-  <!-- 8. WHY SOURDINE -->
+  <!-- 9. WHY SOURDINE -->
   <section class="why">
-    <div class="section-label">
+    <div class="section-label" data-reveal>
       <span class="section-label__no">05</span>
       <span class="section-label__en">WHY SOURDINE</span>
       <span class="section-label__ja">選ぶ理由は、三つ。</span>
     </div>
     <ol class="why__list">
-      <li class="why__item">
+      <li class="why__item" data-reveal>
         <figure class="why__figure"><img src="assets/sections/macro-fabric.jpg" alt="生地の織りのマクロ接写" /></figure>
-        <p class="why__no">一</p>
-        <h3 class="why__head">生地から選ぶ。</h3>
+        <p class="why__no">一</p><h3 class="why__head">生地から選ぶ。</h3>
         <p class="why__text">触れた瞬間の落ち感と温度から選ぶ。良い生地は、一日の終わりまで形を崩さない。</p>
       </li>
-      <li class="why__item">
+      <li class="why__item" data-reveal>
         <figure class="why__figure"><img src="assets/sections/macro-seam.jpg" alt="縫い目のマクロ接写" /></figure>
-        <p class="why__no">二</p>
-        <h3 class="why__head">装飾を足さない。</h3>
+        <p class="why__no">二</p><h3 class="why__head">装飾を足さない。</h3>
         <p class="why__text">ロゴも金具も削ぐ。残った輪郭と縫製の精度だけで、十年先も着られる強さにする。</p>
       </li>
-      <li class="why__item">
+      <li class="why__item" data-reveal>
         <figure class="why__figure"><img src="assets/sections/macro-lining.jpg" alt="裏地のマクロ接写" /></figure>
-        <p class="why__no">三</p>
-        <h3 class="why__head">佇まいで着る。</h3>
+        <p class="why__no">三</p><h3 class="why__head">佇まいで着る。</h3>
         <p class="why__text">すべてユニセックス設計。サイズは性別ではなく、まといたい余白の量で選ぶ。</p>
       </li>
     </ol>
   </section>
 
-  <!-- 9. SHOP -->
+  <!-- 10. SHOP -->
   <section class="shop" id="shop">
     <img class="shop__photo" src="assets/sections/shop-visual.jpg" alt="SOURDINEのコレクション" />
-    <div class="shop__overlay">
+    <div class="shop__overlay" data-reveal>
       <p class="shop__lead" lang="ja">この服を、あなたの声で着てください。</p>
       <a class="shop__cta" href="#">SHOP THE COLLECTION</a>
       <p class="shop__note">送料無料 ¥11,000以上　／　7日以内返品可</p>
     </div>
   </section>
 
-  <!-- 10. FAQ -->
+  <!-- 11. FAQ -->
   <section class="faq">
-    <div class="section-label">
+    <div class="section-label" data-reveal>
       <span class="section-label__no">06</span>
       <span class="section-label__en">FAQ</span>
       <span class="section-label__ja">買う前に。</span>
     </div>
     <dl class="faq__list">
-      <div class="faq__row"><dt>ユニセックスのサイズは、どう選べばいい？</dt><dd>ゆとりを持たせた設計です。落ち感を活かすなら普段より素のサイズで、迷ったら小さい方を。各アイテムに着丈・肩幅・身幅を記載しています。</dd></div>
-      <div class="faq__row"><dt>素材のお手入れは？</dt><dd>ウール・カシミヤ混はご家庭での平干しと、シーズン終わりのドライを推奨。マットギャバジンは手洗い可。品質表示に沿ってお使いください。</dd></div>
-      <div class="faq__row"><dt>配送と送料は？</dt><dd>ご注文から3〜5営業日で発送します。11,000円以上のお買い上げで送料無料、それ以下は全国一律660円です。</dd></div>
-      <div class="faq__row"><dt>返品・交換はできる？</dt><dd>未使用・タグ付きに限り、到着後7日以内で承ります。サイズ交換の送料は当方が負担します。</dd></div>
+      <div class="faq__row" data-reveal><dt>ユニセックスのサイズは、どう選べばいい？</dt><dd>ゆとりを持たせた設計です。落ち感を活かすなら普段より素のサイズで、迷ったら小さい方を。各アイテムに着丈・肩幅・身幅を記載しています。</dd></div>
+      <div class="faq__row" data-reveal><dt>素材のお手入れは？</dt><dd>ウール・カシミヤ混はご家庭での平干しと、シーズン終わりのドライを推奨。マットギャバジンは手洗い可。品質表示に沿ってお使いください。</dd></div>
+      <div class="faq__row" data-reveal><dt>配送と送料は？</dt><dd>ご注文から3〜5営業日で発送します。11,000円以上のお買い上げで送料無料、それ以下は全国一律660円です。</dd></div>
+      <div class="faq__row" data-reveal><dt>返品・交換はできる？</dt><dd>未使用・タグ付きに限り、到着後7日以内で承ります。サイズ交換の送料は当方が負担します。</dd></div>
     </dl>
   </section>
 
-  <!-- 11. SNS -->
+  <!-- 12. SNS -->
   <section class="sns">
-    <p class="sns__lead">静かな更新を、Instagram で。</p>
-    <p class="sns__handle"><a href="#">@sourdine</a></p>
-    <div class="sns__grid">
+    <p class="sns__lead" data-reveal>静かな更新を、Instagram で。</p>
+    <p class="sns__handle" data-reveal><a href="#">@sourdine</a></p>
+    <div class="sns__grid" data-shuffle>
       <img src="assets/sections/sns-1.jpg" alt="" /><img src="assets/sections/sns-2.jpg" alt="" /><img src="assets/sections/sns-3.jpg" alt="" />
       <img src="assets/sections/sns-4.jpg" alt="" /><img src="assets/sections/sns-5.jpg" alt="" /><img src="assets/sections/sns-6.jpg" alt="" />
       <img src="assets/sections/sns-7.jpg" alt="" /><img src="assets/sections/sns-8.jpg" alt="" /><img src="assets/sections/sns-9.jpg" alt="" />
     </div>
-    <p class="sns__contact">お問い合わせは <a href="#">contact@sourdine.jp</a> まで。</p>
+    <p class="sns__contact" data-reveal>お問い合わせは <a href="#">contact@sourdine.jp</a> まで。</p>
   </section>
 
 </main>
@@ -262,10 +334,11 @@
   <p class="site-foot__mark">SOURDINE</p>
   <p class="site-foot__sub">DRESSED IN A LOWER VOICE.</p>
   <nav class="site-foot__nav">
-    <a href="#collection">COLLECTION</a><a href="#styling">STYLING</a><a href="#about">ABOUT</a><a href="#shop">SHOP</a>
+    <a href="#collection">COLLECTION</a><a href="#lookbook">LOOKBOOK</a><a href="#about">ABOUT</a><a href="#shop">SHOP</a>
   </nav>
   <p class="site-foot__demo">このページは制作デモです。架空ブランド SOURDINE は実在しません。— Design demo by ふくろう</p>
 </footer>
 
+<script src="app.js" defer></script>
 </body>
 </html>
